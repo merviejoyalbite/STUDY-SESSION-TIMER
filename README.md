@@ -1,6 +1,6 @@
 # Study Session Timer
 
-A Pomodoro-style Study Session Timer built using:
+A Study Session Timer built using:
 
 - Vanilla JavaScript
 - Node.js
