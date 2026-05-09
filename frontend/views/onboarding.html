@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onboarding - Study Session Timer</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="onboarding-container">
+    <div class="onboarding-card">
+      <h1>🎓 Welcome to Study Session Timer!</h1>
+      <p class="onboarding-subtitle">Let's get started. What do you want to study?</p>
+      
+      <form id="onboardingForm">
+        <div class="form-group">
+          <input 
+            type="text" 
+            id="studyTopic" 
+            name="studyTopic" 
+            placeholder="e.g., Mathematics, Physics, Programming..."
+            required
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary">Get Started</button>
+      </form>
+
+      <div id="errorMessage" class="error-message" style="display: none;"></div>
+    </div>
+  </div>
+
+  <script src="/js/onboarding.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Study Session Timer</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dashboard-page">
+  <div class="dashboard-container">
+    <aside class="sidebar" id="sidebar" aria-label="Study sessions">
+      <div class="sidebar-header">
+        <div>
+          <span class="eyebrow">Study Plan</span>
+          <h2>Sessions</h2>
+        </div>
+        <button id="closeSidebarBtn" class="icon-btn close-btn" aria-label="Close sessions panel">x</button>
+      </div>
+
+      <div class="add-session-section">
+        <h3>Add Session</h3>
+        <form id="addSessionForm">
+          <div class="form-group">
+            <label for="sessionName">Session Name</label>
+            <input type="text" id="sessionName" placeholder="Math Chapter 5" required>
+          </div>
+
+          <div class="time-input-grid">
+            <div class="form-group">
+              <label for="studyTime">Study</label>
+              <input type="number" id="studyTime" min="1" placeholder="25" required>
+            </div>
+
+            <div class="form-group">
+              <label for="breakTime">Break</label>
+              <input type="number" id="breakTime" min="1" placeholder="5" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-small">Add Session</button>
+        </form>
+      </div>
+
+      <div class="sessions-list-section">
+        <div class="section-title-row">
+          <h3>Your Sessions</h3>
+          <span id="sessionCount">0</span>
+        </div>
+        <ul id="sessionsList" class="sessions-list"></ul>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="dashboard-header">
+        <button id="toggleSidebarBtn" class="menu-btn" aria-label="Open sessions panel">Sessions</button>
+        <div class="dashboard-title">
+          <span class="eyebrow">Focus Dashboard</span>
+          <h1>Study Session Timer</h1>
+        </div>
+        <div class="user-info">
+          <span id="username"></span>
+          <button id="logoutBtn" class="btn btn-logout">Logout</button>
+        </div>
+      </header>
+
+      <section class="dashboard-overview" aria-label="Session summary">
+        <div class="stat-panel">
+          <span class="stat-label">Total Sessions</span>
+          <strong id="totalSessions">0</strong>
+        </div>
+        <div class="stat-panel">
+          <span class="stat-label">Study Minutes</span>
+          <strong id="totalStudyMinutes">0</strong>
+        </div>
+        <div class="stat-panel">
+          <span class="stat-label">Current Mode</span>
+          <strong id="currentMode">Study</strong>
+        </div>
+      </section>
+
+      <section class="timer-section">
+        <div class="current-topic">
+          <span class="eyebrow">Currently Studying</span>
+          <h2 id="currentTopic">Loading...</h2>
+        </div>
+
+        <div class="timer-container">
+          <div class="timer-circle">
+            <svg class="timer-svg" width="300" height="300" viewBox="0 0 300 300" aria-hidden="true">
+              <circle class="timer-track" cx="150" cy="150" r="140" fill="none" stroke-width="18"/>
+              <circle
+                id="progressCircle"
+                class="timer-progress"
+                cx="150"
+                cy="150"
+                r="140"
+                fill="none"
+                stroke-width="18"
+                stroke-dasharray="879.645"
+                stroke-dashoffset="879.645"
+                transform="rotate(-90 150 150)"
+              />
+            </svg>
+            <div class="timer-display" aria-live="polite">
+              <div class="time-readout">
+                <span id="timerMinutes">25</span><span>:</span><span id="timerSeconds">00</span>
+              </div>
+              <p id="timerLabel">Study</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timer-controls">
+          <button id="playBtn" class="btn btn-control btn-play">Play</button>
+          <button id="pauseBtn" class="btn btn-control btn-pause" disabled>Pause</button>
+          <button id="nextBtn" class="btn btn-control btn-next">Next</button>
+        </div>
+
+        <p id="timerInfo" class="timer-info">Ready to start studying.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
